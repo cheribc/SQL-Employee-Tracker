@@ -56,6 +56,8 @@ The schema for this application will contain 3 tables with the following fields:
 
 [Cheribc](https://github.com/cheribc/SQL-Employee-Tracker)
 
+[Link to app demo on YouTube](https://youtu.be/TBvHO8L4K58)
+
 ---
 #### __License__
 
