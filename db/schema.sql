@@ -6,32 +6,28 @@ USE employee_db;
 
 -- Create department
 CREATE TABLE department (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    dept_name VARCHAR(30) NOT NULL
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(30) NOT NULL,
+    PRIMARY KEY(id)
 );
 
 -- Create role
 CREATE TABLE role (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id INT NOT NULL AUTO_INCREMENT,
     title VARCHAR(30) NOT NULL,
-    salary DECIMAL(10,2) NOT NULL,
---  reference to department role belongs to
-    department_id INT NOT NULL,
-    FOREIGN KEY (department_id)
-    ON DELETE SET NULL
+    salary DECIMAL NOT NULL,
+    department_id INT,
+    PRIMARY KEY(id)
 );
 
 -- Create employee
 CREATE TABLE employee (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id INT NOT NULL AUTO_INCREMENT ,
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
-    role_id INT NOT NULL,
--- reference to another employee that is the manager of the current employee (null if the employee has no manager)
+    role_id INT,
     manager_id INT,
-    FOREIGN KEY (role_id)
-    REFERENCES  role_id
-    ON DELETE SET NULL
+    PRIMARY KEY(id)
 );
 
 
